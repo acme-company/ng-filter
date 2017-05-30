@@ -105,9 +105,9 @@ export class AppComponent {
 ```
 ## Customizing Filter Functions
 
-The `filterService` provides a `configure` method which accepts a configuration object which you can use to define custom filter predicates.
+The `filterService` provides a `configure` method which accepts a configuration object.  Each property of the configuration object can be set to a custom filter predicate.
 
-The filter predicate has the following signature:
+The filter predicate has the following signature (where T is the item type from the array of items being filtered):
 
 ```typescript    
 function(item:T, value:string): boolean {
@@ -117,7 +117,7 @@ function(item:T, value:string): boolean {
 ```   
 If the predicate returns true, then the item will be included in the filtered list. Otherwise, the item will be excluded.
 
-For example: 
+For example, if the item type is a string: 
 
 ```html
 Filter <input [(ngModel)]="name" />
@@ -129,7 +129,7 @@ Filter <input [(ngModel)]="name" />
 
 ```typescript
 filterService.configure({
-    s: (item:string, value:string) => item.startsWith(value)
+    item: (item:string, value:string) => item.startsWith(value)
 });
 this.list = [
     "apples",
