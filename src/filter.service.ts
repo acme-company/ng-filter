@@ -14,13 +14,14 @@ export class FilterService<T> {
     }
 
     public filter(array: T[], value:string) {
+        if(Object.keys(this.options).length === 0 && this.options.constructor === Object) {
+            return array;
+         }
         return array.filter((item)=> this.matches(item, value));
     }
 
     private matches(item:T, value:string): boolean {
-         if(Object.keys(this.options).length === 0 && this.options.constructor === Object) {
-            return true;
-         }
+
         for (var key in this.options) {
             if (this.options[key](item, value)) {
                 return true;
