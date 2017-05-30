@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform, Inject } from '@angular/core';
 import { FilterService } from "./filter.service";
 
-@Pipe({name: 'filter'})
+@Pipe({name: 'filter', pure: false})
 export class FilterPipe<T> implements PipeTransform {
     constructor(@Inject(FilterService) private filterService:FilterService<T>) {
         
