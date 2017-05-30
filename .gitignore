@@ -1,0 +1,5 @@
+node_modules
+coverage
+dist
+.rpt2_cache
+sauce_connect.log
