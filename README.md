@@ -104,7 +104,7 @@ export class AppComponent {
 ```
 ## Customizing Filter Functions
 
-The `filterService` provides a `configure` method which accepts a configuration object which you can use to define filter predicates.
+The `filterService` provides a `configure` method which accepts a configuration object which you can use to define custom filter predicates.
 
 The filter predicate has the following signature:
 
