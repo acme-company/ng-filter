@@ -1,6 +1,6 @@
 {
   "name": "ng-filter",
-  "version": "0.1.9",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/ng-filter.es5.js",
   "typings": "dist/index.d.ts",
