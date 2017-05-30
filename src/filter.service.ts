@@ -14,7 +14,7 @@ export class FilterService<T> {
     }
 
     public filter(array: T[], value:string) {
-        if(Object.keys(this.options).length === 0 && this.options.constructor === Object) {
+        if(Object.keys(this.options).length === 0) {
             return array;
          }
         return array.filter((item)=> this.matches(item, value));
